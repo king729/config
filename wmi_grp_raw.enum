@@ -1,0 +1,1709 @@
+    WMI_GRP_START = 0x3 
+    WMI_GRP_SCAN = WMI_GRP_START 
+    WMI_GRP_PDEV 
+    WMI_GRP_VDEV 
+    WMI_GRP_PEER 
+    WMI_GRP_MGMT 
+    WMI_GRP_BA_NEG 
+    WMI_GRP_STA_PS 
+    WMI_GRP_DFS 
+    WMI_GRP_ROAM 
+    WMI_GRP_OFL_SCAN 
+    WMI_GRP_P2P 
+    WMI_GRP_AP_PS 
+    WMI_GRP_RATE_CTRL 
+    WMI_GRP_PROFILE 
+    WMI_GRP_SUSPEND 
+    WMI_GRP_BCN_FILTER 
+    WMI_GRP_WOW 
+    WMI_GRP_RTT 
+    WMI_GRP_SPECTRAL 
+    WMI_GRP_STATS 
+    WMI_GRP_ARP_NS_OFL 
+    WMI_GRP_NLO_OFL 
+    WMI_GRP_GTK_OFL 
+    WMI_GRP_CSA_OFL 
+    WMI_GRP_CHATTER 
+    WMI_GRP_TID_ADDBA 
+    WMI_GRP_MISC 
+    WMI_GRP_GPIO 
+    WMI_GRP_FWTEST 
+    WMI_GRP_TDLS 
+    WMI_GRP_RESMGR 
+    WMI_GRP_STA_SMPS 
+    WMI_GRP_WLAN_HB 
+    WMI_GRP_RMC 
+    WMI_GRP_MHF_OFL 
+    WMI_GRP_LOCATION_SCAN 
+    WMI_GRP_OEM 
+    WMI_GRP_NAN 
+    WMI_GRP_COEX 
+    WMI_GRP_OBSS_OFL 
+    WMI_GRP_LPI 
+    WMI_GRP_EXTSCAN 
+    WMI_GRP_DHCP_OFL 
+    WMI_GRP_IPA 
+    WMI_GRP_MDNS_OFL 
+    WMI_GRP_SAP_OFL 
+    WMI_GRP_OCB 
+    WMI_GRP_SOC 
+    WMI_GRP_PKT_FILTER 
+    WMI_GRP_MAWC 
+    WMI_GRP_PMF_OFFLOAD 
+    WMI_GRP_BPF_OFFLOAD 
+    WMI_GRP_NAN_DATA 
+    WMI_GRP_PROTOTYPE 
+    WMI_GRP_MONITOR 
+    WMI_GRP_REGULATORY 
+    WMI_GRP_HW_DATA_FILTER 
+    WMI_GRP_WLM 
+    WMI_GRP_11K_OFFLOAD 
+    WMI_GRP_TWT 
+    WMI_GRP_MOTION_DET 
+    WMI_GRP_SPATIAL_REUSE 
+    WMI_GRP_ESP 
+    WMI_GRP_HPCS_PULSE 
+    WMI_GRP_AUDIO 
+    WMI_GRP_CFR_CAPTURE 
+    WMI_GRP_ATM 
+    HHHHHHHHHHHHHHHHHHHHHHHHHH 
+    /** initialize the wlan sub system */ 
+    WMI_INIT_CMDID = 0x1 
+ 
+    /* Scan specific commands */ 
+ 
+    /** start scan request to FW  */ 
+    WMI_START_SCAN_CMDID = WMI_CMD_GRP_START_ID(WMI_GRP_SCAN) 
+    /** stop scan request to FW  */ 
+    WMI_STOP_SCAN_CMDID 
+    /** full list of channels as defined by the regulatory that will be used by scanner   */ 
+    WMI_SCAN_CHAN_LIST_CMDID 
+    /** overwrite default priority table in scan scheduler   */ 
+    WMI_SCAN_SCH_PRIO_TBL_CMDID 
+    /** This command to adjust the priority and min.max_rest_time 
+     * of an on ongoing scan request. 
+     */ 
+    WMI_SCAN_UPDATE_REQUEST_CMDID 
+ 
+    /** set OUI to be used in probe request if enabled */ 
+    WMI_SCAN_PROB_REQ_OUI_CMDID 
+    /** config adaptive dwell scan */ 
+    WMI_SCAN_ADAPTIVE_DWELL_CONFIG_CMDID 
+    /** Only applicable to DBS capable product */ 
+    WMI_SET_SCAN_DBS_DUTY_CYCLE_CMDID 
+ 
+    /* PDEV(physical device) specific commands */ 
+    /** set regulatorty ctl id used by FW to determine the exact ctl power limits */ 
+    WMI_PDEV_SET_REGDOMAIN_CMDID = WMI_CMD_GRP_START_ID(WMI_GRP_PDEV) 
+    /** set channel. mainly used for supporting monitor mode */ 
+    WMI_PDEV_SET_CHANNEL_CMDID 
+    /** set pdev specific parameters */ 
+    WMI_PDEV_SET_PARAM_CMDID 
+    /** enable packet log */ 
+    WMI_PDEV_PKTLOG_ENABLE_CMDID 
+    /** disable packet log*/ 
+    WMI_PDEV_PKTLOG_DISABLE_CMDID 
+    /** set wmm parameters */ 
+    WMI_PDEV_SET_WMM_PARAMS_CMDID 
+    /** set HT cap ie that needs to be carried probe requests HT/VHT channels */ 
+    WMI_PDEV_SET_HT_CAP_IE_CMDID 
+    /** set VHT cap ie that needs to be carried on probe requests on VHT channels */ 
+    WMI_PDEV_SET_VHT_CAP_IE_CMDID 
+ 
+    /** Command to send the DSCP-to-TID map to the target */ 
+    WMI_PDEV_SET_DSCP_TID_MAP_CMDID 
+    /** set quiet ie parameters. primarily used in AP mode */ 
+    WMI_PDEV_SET_QUIET_MODE_CMDID 
+    /** Enable/Disable Green AP Power Save  */ 
+    WMI_PDEV_GREEN_AP_PS_ENABLE_CMDID 
+    /** get TPC config for the current operating channel */ 
+    WMI_PDEV_GET_TPC_CONFIG_CMDID 
+ 
+    /** set the base MAC address for the physical device before a VDEV is created. 
+     *  For firmware that doesn't support this feature and this command 
+     *  MAC address will not be changed. */ 
+    WMI_PDEV_SET_BASE_MACADDR_CMDID 
+ 
+    /* eeprom content dump  
+    WMI_PDEV_DUMP_CMDID 
+    /* set LED configuration  */ 
+    WMI_PDEV_SET_LED_CONFIG_CMDID 
+    /* Get Current temprature of chip in Celcius degree*/ 
+    WMI_PDEV_GET_TEMPERATURE_CMDID 
+    /* Set LED flashing behavior  */ 
+    WMI_PDEV_SET_LED_FLASHING_CMDID 
+    /** Enable/Disable Smart Antenna */ 
+    WMI_PDEV_SMART_ANT_ENABLE_CMDID 
+    /** Set Smart Antenna RX antenna*/ 
+    WMI_PDEV_SMART_ANT_SET_RX_ANTENNA_CMDID 
+    /** Override the antenna switch table */ 
+    WMI_PDEV_SET_ANTENNA_SWITCH_TABLE_CMDID 
+    /** Override the CTL table */ 
+    WMI_PDEV_SET_CTL_TABLE_CMDID 
+    /** Override the array gain table */ 
+    WMI_PDEV_SET_MIMOGAIN_TABLE_CMDID 
+    /** FIPS test mode command */ 
+    WMI_PDEV_FIPS_CMDID 
+    /** get CCK ANI level */ 
+    WMI_PDEV_GET_ANI_CCK_CONFIG_CMDID 
+    /** get OFDM ANI level */ 
+    WMI_PDEV_GET_ANI_OFDM_CONFIG_CMDID 
+    /** NF Cal Power dBr/dBm */ 
+    WMI_PDEV_GET_NFCAL_POWER_CMDID 
+    /** TxPPDU TPC */ 
+    WMI_PDEV_GET_TPC_CMDID 
+    /** Set to enable MIB stats collection */ 
+    WMI_MIB_STATS_ENABLE_CMDID 
+    /** Set preferred channel list for DBS Mgr */ 
+    WMI_PDEV_SET_PCL_CMDID 
+    /** Set HW mode. Eg: single MAC   see soc_hw_mode_t for values */
+    WMI_PDEV_SET_HW_MODE_CMDID 
+    /** Set DFS 
+    WMI_PDEV_SET_MAC_CONFIG_CMDID 
+    /** Set per band and per pdev antenna chains */ 
+    WMI_PDEV_SET_ANTENNA_MODE_CMDID 
+    /** Periodic channel stats request command */ 
+    WMI_SET_PERIODIC_CHANNEL_STATS_CONFIG_CMDID 
+    /** WMI command for power debug framework */ 
+    WMI_PDEV_WAL_POWER_DEBUG_CMDID 
+    /** set per-AC rx reorder timeouts */ 
+    WMI_PDEV_SET_REORDER_TIMEOUT_VAL_CMDID 
+    /** WMI command for WOW gpio and type */ 
+    WMI_PDEV_SET_WAKEUP_CONFIG_CMDID 
+    /* Get current ANT's per chain's RSSI info */ 
+    WMI_PDEV_GET_ANTDIV_STATUS_CMDID 
+    /** WMI command for getting Chip Power Stats */ 
+    WMI_PDEV_GET_CHIP_POWER_STATS_CMDID 
+    /** set stats reporting thresholds - see WMI_REPORT_STATS_EVENTID */ 
+    WMI_PDEV_SET_STATS_THRESHOLD_CMDID 
+    /** vdev restart request for multiple vdevs */ 
+    WMI_PDEV_MULTIPLE_VDEV_RESTART_REQUEST_CMDID 
+    /** Pdev update packet routing command */ 
+    WMI_PDEV_UPDATE_PKT_ROUTING_CMDID 
+    /** Get Calibration data version details */ 
+    WMI_PDEV_CHECK_CAL_VERSION_CMDID 
+    /** Set Diversity Gain */ 
+    WMI_PDEV_SET_DIVERSITY_GAIN_CMDID 
+    /** Get chain RSSI and antena index command */ 
+    WMI_PDEV_DIV_GET_RSSI_ANTID_CMDID 
+    /** get bss chan info */ 
+    WMI_PDEV_BSS_CHAN_INFO_REQUEST_CMDID 
+    /** update pmk cache info */ 
+    WMI_PDEV_UPDATE_PMK_CACHE_CMDID 
+    /**  update fils HLP */ 
+    WMI_PDEV_UPDATE_FILS_HLP_PKT_CMDID 
+    /** update ctltable request **/ 
+    WMI_PDEV_UPDATE_CTLTABLE_REQUEST_CMDID 
+    /** Command to set beacon OUI **/ 
+    WMI_PDEV_CONFIG_VENDOR_OUI_ACTION_CMDID 
+    /** enable/disable per-AC tx queue optimizations */ 
+    WMI_PDEV_SET_AC_TX_QUEUE_OPTIMIZED_CMDID 
+    /** enable/disable rx promiscuous mode */ 
+    WMI_PDEV_SET_RX_FILTER_PROMISCUOUS_CMDID 
+    /* set a generic direct DMA ring config */ 
+    WMI_PDEV_DMA_RING_CFG_REQ_CMDID 
+    /* enable/disable Action frame response as HE TB PPDU */ 
+    WMI_PDEV_HE_TB_ACTION_FRM_CMDID 
+    /** filter packet log based on MAC address */ 
+    WMI_PDEV_PKTLOG_FILTER_CMDID 
+    /** wmi command for setting rogue ap configuration */ 
+    WMI_PDEV_SET_RAP_CONFIG_CMDID 
+    /** Specify DSM filters along with disallow bssid filters */ 
+    WMI_PDEV_DSM_FILTER_CMDID 
+ 
+    /* VDEV (virtual device) specific commands */ 
+    /** vdev create */ 
+    WMI_VDEV_CREATE_CMDID = WMI_CMD_GRP_START_ID(WMI_GRP_VDEV) 
+    /** vdev delete */ 
+    WMI_VDEV_DELETE_CMDID 
+    /** vdev start request */ 
+    WMI_VDEV_START_REQUEST_CMDID 
+    /** vdev restart request (RX only   used for CAC period)*/
+    WMI_VDEV_RESTART_REQUEST_CMDID 
+    /** vdev up request */ 
+    WMI_VDEV_UP_CMDID 
+    /** vdev stop request */ 
+    WMI_VDEV_STOP_CMDID 
+    /** vdev down request */ 
+    WMI_VDEV_DOWN_CMDID 
+    /* set a vdev param */ 
+    WMI_VDEV_SET_PARAM_CMDID 
+    /* set a key (used for setting per peer unicast and per vdev multicast) */ 
+    WMI_VDEV_INSTALL_KEY_CMDID 
+ 
+    /* wnm sleep mode command */ 
+    WMI_VDEV_WNM_SLEEPMODE_CMDID 
+    WMI_VDEV_WMM_ADDTS_CMDID 
+    WMI_VDEV_WMM_DELTS_CMDID 
+    WMI_VDEV_SET_WMM_PARAMS_CMDID 
+    WMI_VDEV_SET_GTX_PARAMS_CMDID 
+    WMI_VDEV_IPSEC_NATKEEPALIVE_FILTER_CMDID 
+ 
+    WMI_VDEV_PLMREQ_START_CMDID 
+    WMI_VDEV_PLMREQ_STOP_CMDID 
+    /* TSF timestamp action for specified vdev */ 
+    WMI_VDEV_TSF_TSTAMP_ACTION_CMDID 
+    /** set the additional IEs in probe requests for scan or 
+     *  assoc req etc for frames FW locally generates */ 
+    WMI_VDEV_SET_IE_CMDID 
+ 
+    WMI_VDEV_RATEMASK_CMDID 
+    /** ATF VDEV REQUEST commands. */ 
+    WMI_VDEV_ATF_REQUEST_CMDID 
+    /** Command to send the DSCP-to-TID map to the target for VAP */ 
+    WMI_VDEV_SET_DSCP_TID_MAP_CMDID 
+    /* Configure filter for Neighbor Rx Pkt (smart mesh selective listening) */ 
+    WMI_VDEV_FILTER_NEIGHBOR_RX_PACKETS_CMDID 
+    /** set quiet ie parameters. primarily used in AP mode */ 
+    WMI_VDEV_SET_QUIET_MODE_CMDID 
+    /** To set custom aggregation size for per vdev */ 
+    WMI_VDEV_SET_CUSTOM_AGGR_SIZE_CMDID 
+ 
+    /* DISA feature: Encrypt-decrypt data request */ 
+    WMI_VDEV_ENCRYPT_DECRYPT_DATA_REQ_CMDID 
+ 
+    /** Command to enable mac randomizaton **/ 
+    WMI_VDEV_ADD_MAC_ADDR_TO_RX_FILTER_CMDID 
+ 
+    /** WMI commands related to dbg arp stats */ 
+    WMI_VDEV_SET_ARP_STAT_CMDID 
+    WMI_VDEV_GET_ARP_STAT_CMDID 
+ 
+    /** get tx power for the current vdev */ 
+    WMI_VDEV_GET_TX_POWER_CMDID 
+    /* limit STA offchannel activity */ 
+    WMI_VDEV_LIMIT_OFFCHAN_CMDID 
+    /** To set custom software retries per-AC for vdev */ 
+    WMI_VDEV_SET_CUSTOM_SW_RETRY_TH_CMDID 
+    /** To set chainmask configuration for vdev */ 
+    WMI_VDEV_CHAINMASK_CONFIG_CMDID 
+ 
+    WMI_VDEV_GET_BCN_RECEPTION_STATS_CMDID 
+    /* request LTE-Coex info */ 
+    WMI_VDEV_GET_MWS_COEX_INFO_CMDID 
+    /** delete all peer (excluding bss peer) */ 
+    WMI_VDEV_DELETE_ALL_PEER_CMDID 
+    /* To set bss max idle time related parameters */ 
+    WMI_VDEV_BSS_MAX_IDLE_TIME_CMDID 
+ 
+    /* peer specific commands */ 
+ 
+    /** create a peer */ 
+    WMI_PEER_CREATE_CMDID = WMI_CMD_GRP_START_ID(WMI_GRP_PEER) 
+    /** delete a peer */ 
+    WMI_PEER_DELETE_CMDID 
+    /** flush specific  tid queues of a peer */ 
+    WMI_PEER_FLUSH_TIDS_CMDID 
+    /** set a parameter of a peer */ 
+    WMI_PEER_SET_PARAM_CMDID 
+    /** set peer to associated state. will cary all parameters determined during assocication time */ 
+    WMI_PEER_ASSOC_CMDID 
+    /**add a wds  (4 address) entry. used only for testing WDS feature on AP products */ 
+    WMI_PEER_ADD_WDS_ENTRY_CMDID 
+    /**remove wds  (4 address) entry. used only for testing WDS feature on AP products */ 
+    WMI_PEER_REMOVE_WDS_ENTRY_CMDID 
+    /** set up mcast group infor for multicast to unicast conversion */ 
+    WMI_PEER_MCAST_GROUP_CMDID 
+    /** request peer info from FW. FW shall respond with PEER_INFO_EVENTID */ 
+    WMI_PEER_INFO_REQ_CMDID 
+    /** request the estimated link speed for the peer. FW shall respond with 
+     *  WMI_PEER_ESTIMATED_LINKSPEED_EVENTID. 
+     */ 
+    WMI_PEER_GET_ESTIMATED_LINKSPEED_CMDID 
+    /** Set the conditions to report peer justified rate to driver 
+     * The justified rate means the user-rate is justified by PER. 
+     */ 
+    WMI_PEER_SET_RATE_REPORT_CONDITION_CMDID 
+ 
+    /** update a wds (4 address) entry */ 
+    WMI_PEER_UPDATE_WDS_ENTRY_CMDID 
+    /** add a proxy sta entry */ 
+    WMI_PEER_ADD_PROXY_STA_ENTRY_CMDID 
+    /** Set Smart Antenna TX antenna */ 
+    WMI_PEER_SMART_ANT_SET_TX_ANTENNA_CMDID 
+    /** Set Smart Antenna TX train info */ 
+    WMI_PEER_SMART_ANT_SET_TRAIN_INFO_CMDID 
+    /** Set SA node config options */ 
+    WMI_PEER_SMART_ANT_SET_NODE_CONFIG_OPS_CMDID 
+    /** ATF PEER REQUEST commands */ 
+    WMI_PEER_ATF_REQUEST_CMDID 
+    /** bandwidth fairness (BWF) peer configuration request command */ 
+    WMI_PEER_BWF_REQUEST_CMDID 
+    /** rx reorder queue setup for peer/tid */ 
+    WMI_PEER_REORDER_QUEUE_SETUP_CMDID 
+    /** rx reorder queue remove for peer/tid */ 
+    WMI_PEER_REORDER_QUEUE_REMOVE_CMDID 
+    /** specify a limit for rx A-MPDU block size */ 
+    WMI_PEER_SET_RX_BLOCKSIZE_CMDID 
+    /** request peer antdiv info from FW. FW shall respond with PEER_ANTDIV_INFO_EVENTID */ 
+    WMI_PEER_ANTDIV_INFO_REQ_CMDID 
+    /* 
+     * The WMI_PEER_OPER_MODE_CHANGE_EVENTID def was originally mistakenly 
+     * placed here 
+     * The WMI_PEER_OPER_MODE_CHANGE_EVENTID def has been moved to the 
+     * EVENTID section   the value
+     * here that had been used for WMI_PEER_OPER_MODE_CHANGE_EVENTID 
+     * is kept reserved/deprecated. 
+     * 
+     * This WMI_PEER_RESERVED0_CMDID value can be replaced with an actual 
+     * WMI peer event message ID 
+     * new WMI_PEER CMDID defs at the end of the WMI_GRP_PEER WMI_CMD_GRP. 
+     */ 
+    WMI_PEER_RESERVED0_CMDID 
+    /** Peer/Tid/Msduq threshold update */ 
+    WMI_PEER_TID_MSDUQ_QDEPTH_THRESH_UPDATE_CMDID 
+    /** TID specific configurations per peer of type 
+     * wmi_peer_tid_configurations_cmd_fixed_param 
+     */ 
+    WMI_PEER_TID_CONFIGURATIONS_CMDID 
+ 
+    /** Peer configuration for Channel Frequency Response (CFR) capture 
+     * of type wmi_peer_cfr_capture_cmd. 
+     * 
+     * On targets that do not use the direct DMA framework 
+     * completion of the CFR capture is communicated through 
+     * HTT_T2H_MSG_TYPE_CFR_DUMP_COMPL_IND. 
+     * Such targets will set WMI_SERVICE_CFR_CAPTURE_IND_MSG_TYPE_1 
+     * in WMI Service Ready. 
+     * 
+     * On targets that use direct DMA 
+     * communicated through WMI_PDEV_DMA_RING_BUF_RELEASE_EVENTID 
+     * using module ID WMI_DMA_RING_CONFIG_MODULE_RTT. 
+     * Such targets will set WMI_SERVICE_CFR_CAPTURE_IND_EVT_TYPE_1 
+     * in WMI Service Ready and enumerate WMI_DMA_RING_CONFIG_MODULE_RTT 
+     * in the dma_ring_caps entry of WMI_SERVICE_READY_EXT_EVENTID. 
+     * Additional MAC metadata is provided in WMI_PEER_CFR_CAPTURE_EVENTID. 
+     */ 
+    WMI_PEER_CFR_CAPTURE_CMDID 
+ 
+    /** WMI command related to AP channel width switching */ 
+    WMI_PEER_CHAN_WIDTH_SWITCH_CMDID 
+ 
+    /** WMI command to fetch current tx PN for the peer */ 
+    WMI_PEER_TX_PN_REQUEST_CMDID 
+ 
+    /** unmap response with peer ids */ 
+    WMI_PEER_UNMAP_RESPONSE_CMDID 
+ 
+    /** WMI command for per-peer configuration of VLAN header operations 
+     * during TX and RX 
+     */ 
+    WMI_PEER_CONFIG_VLAN_CMDID 
+ 
+ 
+    /* beacon/management specific commands */ 
+ 
+    /** transmit beacon by reference . used for transmitting beacon on low latency interface like pcie */ 
+    WMI_BCN_TX_CMDID = WMI_CMD_GRP_START_ID(WMI_GRP_MGMT) 
+    /** transmit beacon by value */ 
+    WMI_PDEV_SEND_BCN_CMDID 
+    /** set the beacon template. used in beacon offload mode to setup the 
+     *  the common beacon template with the FW to be used by FW to generate beacons */ 
+    WMI_BCN_TMPL_CMDID 
+    /** set beacon filter with FW */ 
+    WMI_BCN_FILTER_RX_CMDID 
+    /* enable/disable filtering of probe requests in the firmware */ 
+    WMI_PRB_REQ_FILTER_RX_CMDID 
+    /** transmit management frame by value. will be deprecated */ 
+    WMI_MGMT_TX_CMDID 
+    /** set the probe response template. used in beacon offload mode to setup the 
+     *  the common probe response template with the FW to be used by FW to generate 
+     *  probe responses */ 
+    WMI_PRB_TMPL_CMDID 
+    /** Transmit Mgmt frame by reference */ 
+    WMI_MGMT_TX_SEND_CMDID 
+    /** Transmit data frame by reference */ 
+    WMI_OFFCHAN_DATA_TX_SEND_CMDID 
+    /** transmit FILS Discovery frame by value */ 
+    WMI_PDEV_SEND_FD_CMDID 
+    /** Cmd to enable/disable offloaded beacons */ 
+    WMI_BCN_OFFLOAD_CTRL_CMDID 
+    /** Cmd to enable FW handling BSS color change notification from AP. */ 
+    WMI_BSS_COLOR_CHANGE_ENABLE_CMDID 
+    /** To configure Beacon offload quiet-ie params */ 
+    WMI_VDEV_BCN_OFFLOAD_QUIET_CONFIG_CMDID 
+    /** set FILS Discovery frame template for FW to generate FD frames */ 
+    WMI_FD_TMPL_CMDID 
+ 
+    /** commands to directly control ba negotiation directly from host. only used in test mode */ 
+ 
+    /** turn off FW Auto addba mode and let host control addba */ 
+    WMI_ADDBA_CLEAR_RESP_CMDID = WMI_CMD_GRP_START_ID(WMI_GRP_BA_NEG) 
+    /** send add ba request */ 
+    WMI_ADDBA_SEND_CMDID 
+    WMI_ADDBA_STATUS_CMDID 
+    /** send del ba */ 
+    WMI_DELBA_SEND_CMDID 
+    /** set add ba response will be used by FW to generate addba response*/ 
+    WMI_ADDBA_SET_RESP_CMDID 
+    /** send single VHT MPDU with AMSDU */ 
+    WMI_SEND_SINGLEAMSDU_CMDID 
+ 
+    /** Station power save specific config */ 
+    /** enable/disable station powersave */ 
+    WMI_STA_POWERSAVE_MODE_CMDID = WMI_CMD_GRP_START_ID(WMI_GRP_STA_PS) 
+    /** set station power save specific parameter */ 
+    WMI_STA_POWERSAVE_PARAM_CMDID 
+    /** set station mimo powersave mode */ 
+    WMI_STA_MIMO_PS_MODE_CMDID 
+    /** config station TX cycle percentage in a beacon interval */ 
+    WMI_STA_TDCC_CONFIG_CMDID 
+ 
+ 
+    /** DFS-specific commands */ 
+    /** enable DFS (radar detection)*/ 
+    WMI_PDEV_DFS_ENABLE_CMDID = WMI_CMD_GRP_START_ID(WMI_GRP_DFS) 
+    /** disable DFS (radar detection)*/ 
+    WMI_PDEV_DFS_DISABLE_CMDID 
+    /** enable DFS phyerr/parse filter offload */ 
+    WMI_DFS_PHYERR_FILTER_ENA_CMDID 
+    /** enable DFS phyerr/parse filter offload */ 
+    WMI_DFS_PHYERR_FILTER_DIS_CMDID 
+    /** enable DFS phyerr processing offload */ 
+    WMI_PDEV_DFS_PHYERR_OFFLOAD_ENABLE_CMDID 
+    /** disable DFS phyerr processing offload */ 
+    WMI_PDEV_DFS_PHYERR_OFFLOAD_DISABLE_CMDID 
+    /** set ADFS channel config */ 
+    WMI_VDEV_ADFS_CH_CFG_CMDID 
+    /** abort ADFS off-channel-availability-check currently in progress */ 
+    WMI_VDEV_ADFS_OCAC_ABORT_CMDID 
+ 
+    /* Roaming specific commands */ 
+    /** set roam scan mode */ 
+    WMI_ROAM_SCAN_MODE = WMI_CMD_GRP_START_ID(WMI_GRP_ROAM) 
+    /** set roam scan rssi threshold below which roam scan is enabled  */ 
+    WMI_ROAM_SCAN_RSSI_THRESHOLD 
+    /** set roam scan period for periodic roam scan mode  */ 
+    WMI_ROAM_SCAN_PERIOD 
+    /** set roam scan trigger rssi change threshold   */ 
+    WMI_ROAM_SCAN_RSSI_CHANGE_THRESHOLD 
+    /** set roam AP profile   */ 
+    WMI_ROAM_AP_PROFILE 
+    /** set channel list for roam scans */ 
+    WMI_ROAM_CHAN_LIST 
+    /** Stop scan command */ 
+    WMI_ROAM_SCAN_CMD 
+    /** roaming sme offload sync complete */ 
+    WMI_ROAM_SYNCH_COMPLETE 
+    /** set ric request element for 11r roaming */ 
+    WMI_ROAM_SET_RIC_REQUEST_CMDID 
+    /** Invoke roaming forcefully */ 
+    WMI_ROAM_INVOKE_CMDID 
+    /** roaming filter cmd to allow further filtering of roaming candidate */ 
+    WMI_ROAM_FILTER_CMDID 
+    /** set gateway ip 
+    WMI_ROAM_SUBNET_CHANGE_CONFIG_CMDID 
+    /** configure thresholds for MAWC */ 
+    WMI_ROAM_CONFIGURE_MAWC_CMDID 
+    /** configure MultiBand Operation(refer WFA MBO spec) parameter */ 
+    WMI_ROAM_SET_MBO_PARAM_CMDID 
+    /** configure packet error rate threshold for triggering roaming */ 
+    WMI_ROAM_PER_CONFIG_CMDID 
+    /** configure BSS Transition Management (BTM) offload for roaming */ 
+    WMI_ROAM_BTM_CONFIG_CMDID 
+    /** Enable or Disable Fast Initial Link Setup (FILS) feature */ 
+    WMI_ENABLE_FILS_CMDID 
+    /** Request for roam scan stats */ 
+    WMI_REQUEST_ROAM_SCAN_STATS_CMDID 
+    /** Configure BSS load parameters for roam trigger */ 
+    WMI_ROAM_BSS_LOAD_CONFIG_CMDID 
+    /** Configure deauth roam trigger parameters */ 
+    WMI_ROAM_DEAUTH_CONFIG_CMDID 
+    /** Configure idle roam trigger parameters */ 
+    WMI_ROAM_IDLE_CONFIG_CMDID 
+    /** 
+     * WMI_ROAM_DSM_FILTER_CMDID is deprecated and should be unused 
+     * but leave it reserved just to be safe. 
+     */ 
+    DEPRECATED__WMI_ROAM_DSM_FILTER_CMDID 
+    /** Enable or disable roaming triggers */ 
+    WMI_ROAM_ENABLE_DISABLE_TRIGGER_REASON_CMDID 
+    /** Pre-Authentication completion status command */ 
+    WMI_ROAM_PREAUTH_STATUS_CMDID 
+ 
+    /** offload scan specific commands */ 
+    /** set offload scan AP profile   */ 
+    WMI_OFL_SCAN_ADD_AP_PROFILE = WMI_CMD_GRP_START_ID(WMI_GRP_OFL_SCAN) 
+    /** remove offload scan AP profile   */ 
+    WMI_OFL_SCAN_REMOVE_AP_PROFILE 
+    /** set offload scan period   */ 
+    WMI_OFL_SCAN_PERIOD 
+ 
+    /* P2P specific commands */ 
+    /**set P2P device info. FW will used by FW to create P2P IE to be carried in probe response 
+     * generated during p2p listen and for p2p discoverability  */ 
+    WMI_P2P_DEV_SET_DEVICE_INFO = WMI_CMD_GRP_START_ID(WMI_GRP_P2P) 
+    /** enable/disable p2p discoverability on STA/AP VDEVs  */ 
+    WMI_P2P_DEV_SET_DISCOVERABILITY 
+    /** set p2p ie to be carried in beacons generated by FW for GO  */ 
+    WMI_P2P_GO_SET_BEACON_IE 
+    /** set p2p ie to be carried in probe response frames generated by FW for GO  */ 
+    WMI_P2P_GO_SET_PROBE_RESP_IE 
+    /** set the vendor specific p2p ie data. FW will use this to parse the P2P NoA 
+     *  attribute in the beacons/probe responses received. 
+     *  Note: This command is currently used only for Apple P2P implementation. 
+     */ 
+    WMI_P2P_SET_VENDOR_IE_DATA_CMDID 
+    /** set the configure of p2p find offload */ 
+    WMI_P2P_DISC_OFFLOAD_CONFIG_CMDID 
+    /** set the vendor specific p2p ie data for p2p find offload using */ 
+    WMI_P2P_DISC_OFFLOAD_APPIE_CMDID 
+    /** set the BSSID/device name pattern of p2p find offload */ 
+    WMI_P2P_DISC_OFFLOAD_PATTERN_CMDID 
+    /** set OppPS related parameters **/ 
+    WMI_P2P_SET_OPPPS_PARAM_CMDID 
+    /** set listen offload start related parameters */ 
+    WMI_P2P_LISTEN_OFFLOAD_START_CMDID 
+    /** set listen offload stop related parameters */ 
+    WMI_P2P_LISTEN_OFFLOAD_STOP_CMDID 
+ 
+    /** AP power save specific config */ 
+    /** set AP power save specific param */ 
+    WMI_AP_PS_PEER_PARAM_CMDID = WMI_CMD_GRP_START_ID(WMI_GRP_AP_PS) 
+    /** set AP UAPSD coex specific param */ 
+    WMI_AP_PS_PEER_UAPSD_COEX_CMDID 
+    /** set Enhanced Green AP param */ 
+    WMI_AP_PS_EGAP_PARAM_CMDID 
+ 
+    /** Rate-control specific commands */ 
+    WMI_PEER_RATE_RETRY_SCHED_CMDID = WMI_CMD_GRP_START_ID(WMI_GRP_RATE_CTRL) 
+ 
+    /** WLAN Profiling commands. */ 
+    WMI_WLAN_PROFILE_TRIGGER_CMDID = WMI_CMD_GRP_START_ID(WMI_GRP_PROFILE) 
+    WMI_WLAN_PROFILE_SET_HIST_INTVL_CMDID 
+    WMI_WLAN_PROFILE_GET_PROFILE_DATA_CMDID 
+    WMI_WLAN_PROFILE_ENABLE_PROFILE_ID_CMDID 
+    WMI_WLAN_PROFILE_LIST_PROFILE_ID_CMDID 
+ 
+    /** Suspend resume command Ids */ 
+    WMI_PDEV_SUSPEND_CMDID = WMI_CMD_GRP_START_ID(WMI_GRP_SUSPEND) 
+    WMI_PDEV_RESUME_CMDID 
+ 
+    /* Beacon filter commands */ 
+    /** add a beacon filter */ 
+    WMI_ADD_BCN_FILTER_CMDID = WMI_CMD_GRP_START_ID(WMI_GRP_BCN_FILTER) 
+    /** remove a  beacon filter */ 
+    WMI_RMV_BCN_FILTER_CMDID 
+ 
+    /* WOW Specific WMI commands*/ 
+    /** add pattern for awake */ 
+    WMI_WOW_ADD_WAKE_PATTERN_CMDID = WMI_CMD_GRP_START_ID(WMI_GRP_WOW) 
+    /** deleta a wake pattern */ 
+    WMI_WOW_DEL_WAKE_PATTERN_CMDID 
+    /** enable/deisable wake event  */ 
+    WMI_WOW_ENABLE_DISABLE_WAKE_EVENT_CMDID 
+    /** enable WOW  */ 
+    WMI_WOW_ENABLE_CMDID 
+    /** host woke up from sleep event to FW. Generated in response to WOW Hardware event */ 
+    WMI_WOW_HOSTWAKEUP_FROM_SLEEP_CMDID 
+    /* IOAC add keep alive cmd. */ 
+    WMI_WOW_IOAC_ADD_KEEPALIVE_CMDID 
+    /* IOAC del keep alive cmd. */ 
+    WMI_WOW_IOAC_DEL_KEEPALIVE_CMDID 
+    /* IOAC add pattern for awake */ 
+    WMI_WOW_IOAC_ADD_WAKE_PATTERN_CMDID 
+    /* IOAC deleta a wake pattern */ 
+    WMI_WOW_IOAC_DEL_WAKE_PATTERN_CMDID 
+    /* D0-WOW enable or disable cmd */ 
+    WMI_D0_WOW_ENABLE_DISABLE_CMDID 
+    /* enable extend WoW */ 
+    WMI_EXTWOW_ENABLE_CMDID 
+    /* Extend WoW command to configure app type1 parameter */ 
+    WMI_EXTWOW_SET_APP_TYPE1_PARAMS_CMDID 
+    /* Extend WoW command to configure app type2 parameter */ 
+    WMI_EXTWOW_SET_APP_TYPE2_PARAMS_CMDID 
+    /* enable ICMPv6 Network advertisement filtering */ 
+    WMI_WOW_ENABLE_ICMPV6_NA_FLT_CMDID 
+    /* 
+     * Set a pattern to match UDP packet in WOW mode. 
+     * If match 
+     * to send through the peer AP to the entity in the 
+     * IP network that sent the UDP packet to this STA. 
+     */ 
+    WMI_WOW_UDP_SVC_OFLD_CMDID 
+    /* configure WOW host wakeup PIN pattern */ 
+    WMI_WOW_HOSTWAKEUP_GPIO_PIN_PATTERN_CONFIG_CMDID 
+ 
+    /* Set which action category should wake the host from suspend */ 
+    WMI_WOW_SET_ACTION_WAKE_UP_CMDID 
+ 
+    /* RTT measurement related cmd */ 
+    /** request to make an RTT measurement */ 
+    WMI_RTT_MEASREQ_CMDID = WMI_CMD_GRP_START_ID(WMI_GRP_RTT) 
+    /** request to report a tsf measurement */ 
+    WMI_RTT_TSF_CMDID 
+ 
+    /** spectral scan command */ 
+    /** configure spectral scan */ 
+    WMI_VDEV_SPECTRAL_SCAN_CONFIGURE_CMDID = WMI_CMD_GRP_START_ID(WMI_GRP_SPECTRAL) 
+    /** enable/disable spectral scan and trigger */ 
+    WMI_VDEV_SPECTRAL_SCAN_ENABLE_CMDID 
+ 
+    /* F/W stats */ 
+    /** one time request for stats */ 
+    WMI_REQUEST_STATS_CMDID = WMI_CMD_GRP_START_ID(WMI_GRP_STATS) 
+    /** Push MCC Adaptive Scheduler Stats to Firmware */ 
+    WMI_MCC_SCHED_TRAFFIC_STATS_CMDID 
+    /** one time request for txrx stats */ 
+    WMI_REQUEST_STATS_EXT_CMDID 
+    /* Link Layer stats */ 
+    /** Request for link layer stats */ 
+    WMI_REQUEST_LINK_STATS_CMDID 
+    /** Request for setting params to link layer stats */ 
+    WMI_START_LINK_STATS_CMDID 
+    /** Request to clear stats*/ 
+    WMI_CLEAR_LINK_STATS_CMDID 
+ 
+    /** Request for getting the Firmware Memory Dump */ 
+    WMI_GET_FW_MEM_DUMP_CMDID 
+ 
+    /** Request to flush of the buffered debug messages */ 
+    WMI_DEBUG_MESG_FLUSH_CMDID 
+ 
+    /** Cmd to configure the verbose level */ 
+    WMI_DIAG_EVENT_LOG_CONFIG_CMDID 
+ 
+    /** One time request for wlan stats */ 
+    WMI_REQUEST_WLAN_STATS_CMDID 
+ 
+    /** Request for getting RCPI of peer */ 
+    WMI_REQUEST_RCPI_CMDID 
+ 
+    /** One time request for peer stats info */ 
+    WMI_REQUEST_PEER_STATS_INFO_CMDID 
+ 
+    /** One time request for radio channel stats */ 
+    WMI_REQUEST_RADIO_CHAN_STATS_CMDID 
+ 
+    /** request for WLM (wlan latency manager) stats */ 
+    WMI_REQUEST_WLM_STATS_CMDID 
+ 
+ 
+    /** ARP OFFLOAD REQUEST*/ 
+    WMI_SET_ARP_NS_OFFLOAD_CMDID = WMI_CMD_GRP_START_ID(WMI_GRP_ARP_NS_OFL) 
+ 
+    /** Proactive ARP Response Add Pattern Command*/ 
+    WMI_ADD_PROACTIVE_ARP_RSP_PATTERN_CMDID 
+ 
+    /** Proactive ARP Response Del Pattern Command*/ 
+    WMI_DEL_PROACTIVE_ARP_RSP_PATTERN_CMDID 
+ 
+    /** NS offload confid*/ 
+    WMI_NETWORK_LIST_OFFLOAD_CONFIG_CMDID = WMI_CMD_GRP_START_ID(WMI_GRP_NLO_OFL) 
+ 
+    /** APFIND Config */ 
+    WMI_APFIND_CMDID 
+ 
+    /** Passpoint list config  */ 
+    WMI_PASSPOINT_LIST_CONFIG_CMDID 
+ 
+    /** configure supprssing parameters for MAWC */ 
+    WMI_NLO_CONFIGURE_MAWC_CMDID 
+ 
+    /* GTK offload Specific WMI commands*/ 
+    WMI_GTK_OFFLOAD_CMDID = WMI_CMD_GRP_START_ID(WMI_GRP_GTK_OFL) 
+ 
+    /* CSA offload Specific WMI commands*/ 
+    /** csa offload enable */ 
+    WMI_CSA_OFFLOAD_ENABLE_CMDID = WMI_CMD_GRP_START_ID(WMI_GRP_CSA_OFL) 
+    /** chan switch command */ 
+    WMI_CSA_OFFLOAD_CHANSWITCH_CMDID 
+ 
+    /* Chatter commands*/ 
+    /* Change chatter mode of operation */ 
+    WMI_CHATTER_SET_MODE_CMDID = WMI_CMD_GRP_START_ID(WMI_GRP_CHATTER) 
+    /** chatter add coalescing filter command */ 
+    WMI_CHATTER_ADD_COALESCING_FILTER_CMDID 
+    /** chatter delete coalescing filter command */ 
+    WMI_CHATTER_DELETE_COALESCING_FILTER_CMDID 
+    /** chatter coalecing query command */ 
+    WMI_CHATTER_COALESCING_QUERY_CMDID 
+ 
+    /**addba specific commands */ 
+    /** start the aggregation on this TID */ 
+    WMI_PEER_TID_ADDBA_CMDID = WMI_CMD_GRP_START_ID(WMI_GRP_TID_ADDBA) 
+    /** stop the aggregation on this TID */ 
+    WMI_PEER_TID_DELBA_CMDID 
+ 
+    /** set station mimo powersave method */ 
+    WMI_STA_DTIM_PS_METHOD_CMDID 
+    /** Configure the Station UAPSD AC Auto Trigger Parameters */ 
+    WMI_STA_UAPSD_AUTO_TRIG_CMDID 
+    /** Configure the Keep Alive Parameters */ 
+    WMI_STA_KEEPALIVE_CMDID 
+ 
+    /* Request ssn from target for a sta/tid pair */ 
+    WMI_BA_REQ_SSN_CMDID 
+ 
+ 
+    /* misc command group */ 
+    /** echo command mainly used for testing */ 
+    WMI_ECHO_CMDID = WMI_CMD_GRP_START_ID(WMI_GRP_MISC) 
+ 
+    /* !!IMPORTANT!! 
+     * If you need to add a new WMI command to the WMI_GRP_MISC sub-group 
+     * please make sure you add it BEHIND WMI_PDEV_UTF_CMDID 
+     * as we MUST have a fixed value here to maintain compatibility between 
+     * UTF and the ART2 driver 
+     */ 
+    /** UTF WMI commands */ 
+    WMI_PDEV_UTF_CMDID 
+ 
+    /** set debug log config */ 
+    WMI_DBGLOG_CFG_CMDID 
+    /* QVIT specific command id */ 
+    WMI_PDEV_QVIT_CMDID 
+    /* Factory Testing Mode request command 
+     * used for integrated chipsets */ 
+    WMI_PDEV_FTM_INTG_CMDID 
+    /* set and get keepalive parameters command */ 
+    WMI_VDEV_SET_KEEPALIVE_CMDID 
+    WMI_VDEV_GET_KEEPALIVE_CMDID 
+    /* For fw recovery test command */ 
+    WMI_FORCE_FW_HANG_CMDID 
+    /* Set Mcast/Bdcast filter */ 
+    WMI_SET_MCASTBCAST_FILTER_CMDID 
+    /** set thermal management params **/ 
+    WMI_THERMAL_MGMT_CMDID 
+    /** set host auto shutdown params **/ 
+    WMI_HOST_AUTO_SHUTDOWN_CFG_CMDID 
+    /** set tpc chainmask config command */ 
+    WMI_TPC_CHAINMASK_CONFIG_CMDID 
+    /** set Antenna diversity command */ 
+    WMI_SET_ANTENNA_DIVERSITY_CMDID 
+    /** Set OCB Sched Request 
+    WMI_OCB_SET_SCHED_CMDID 
+    /** Set rssi monitoring config command */ 
+    WMI_RSSI_BREACH_MONITOR_CONFIG_CMDID 
+    /** Enable/disable Large Receive Offload processing; provide cfg params */ 
+    WMI_LRO_CONFIG_CMDID 
+    /** transfer data from host to firmware to write flash */ 
+    WMI_TRANSFER_DATA_TO_FLASH_CMDID 
+    /** Command to enable/disable filtering of multicast IP with unicast mac */ 
+    WMI_CONFIG_ENHANCED_MCAST_FILTER_CMDID 
+    /** Command to control WISA mode */ 
+    WMI_VDEV_WISA_CMDID 
+    /** set debug log time stamp sync up with host */ 
+    WMI_DBGLOG_TIME_STAMP_SYNC_CMDID 
+    /** Command for host to set/delete multiple mcast filters */ 
+    WMI_SET_MULTIPLE_MCAST_FILTER_CMDID 
+    /** upload a requested section of data from firmware flash to host */ 
+    WMI_READ_DATA_FROM_FLASH_CMDID 
+    /* Thermal Throttling SET CONF commands */ 
+    WMI_THERM_THROT_SET_CONF_CMDID 
+    /* set runtime dpd recalibration params */ 
+    WMI_RUNTIME_DPD_RECAL_CMDID 
+    /* get TX power for input HALPHY parameters */ 
+    WMI_GET_TPC_POWER_CMDID 
+    /* Specify when to start monitoring for idle state */ 
+    WMI_IDLE_TRIGGER_MONITOR_CMDID 
+    /** set ELNA BYPASS status */ 
+    WMI_SET_ELNA_BYPASS_CMDID 
+    /** get ELNA BYPASS status */ 
+    WMI_GET_ELNA_BYPASS_CMDID 
+    /** get ANI level of the channels */ 
+    WMI_GET_CHANNEL_ANI_CMDID 
+ 
+    /*  Offload 11k related requests */ 
+    WMI_11K_OFFLOAD_REPORT_CMDID = WMI_CMD_GRP_START_ID(WMI_GRP_11K_OFFLOAD) 
+    /* invoke neighbor report from FW */ 
+    WMI_11K_INVOKE_NEIGHBOR_REPORT_CMDID 
+ 
+    /* GPIO Configuration */ 
+    WMI_GPIO_CONFIG_CMDID = WMI_CMD_GRP_START_ID(WMI_GRP_GPIO) 
+    WMI_GPIO_OUTPUT_CMDID 
+ 
+    /* Txbf configuration command */ 
+    WMI_TXBF_CMDID 
+ 
+    /* FWTEST Commands */ 
+    WMI_FWTEST_VDEV_MCC_SET_TBTT_MODE_CMDID = WMI_CMD_GRP_START_ID(WMI_GRP_FWTEST) 
+    /** set NoA descs **/ 
+    WMI_FWTEST_P2P_SET_NOA_PARAM_CMDID 
+    /* UNIT Tests  */ 
+    WMI_UNIT_TEST_CMDID 
+    /* set debug and tuning parameters */ 
+    WMI_FWTEST_CMDID 
+    /* Q-Boost configuration test commands */ 
+    WMI_QBOOST_CFG_CMDID 
+ 
+    /** TDLS Configuration */ 
+    /** enable/disable TDLS */ 
+    WMI_TDLS_SET_STATE_CMDID = WMI_CMD_GRP_START_ID(WMI_GRP_TDLS) 
+    /** set tdls peer state */ 
+    WMI_TDLS_PEER_UPDATE_CMDID 
+    /** TDLS Offchannel control */ 
+    WMI_TDLS_SET_OFFCHAN_MODE_CMDID 
+ 
+    /** Resmgr Configuration */ 
+    /** Adaptive OCS is enabled by default in the FW. This command is used to 
+     * disable FW based adaptive OCS. 
+     */ 
+    WMI_RESMGR_ADAPTIVE_OCS_ENABLE_DISABLE_CMDID = WMI_CMD_GRP_START_ID(WMI_GRP_RESMGR) 
+    /** set the requested channel time quota for the home channels */ 
+    WMI_RESMGR_SET_CHAN_TIME_QUOTA_CMDID 
+    /** set the requested latency for the home channels */ 
+    WMI_RESMGR_SET_CHAN_LATENCY_CMDID 
+ 
+    /** STA SMPS Configuration */ 
+    /** force SMPS mode */ 
+    WMI_STA_SMPS_FORCE_MODE_CMDID = WMI_CMD_GRP_START_ID(WMI_GRP_STA_SMPS) 
+    /** set SMPS parameters */ 
+    WMI_STA_SMPS_PARAM_CMDID 
+ 
+    /* Wlan HB commands*/ 
+    /* enalbe/disable wlan HB */ 
+    WMI_HB_SET_ENABLE_CMDID = WMI_CMD_GRP_START_ID(WMI_GRP_WLAN_HB) 
+    /* set tcp parameters for wlan HB */ 
+    WMI_HB_SET_TCP_PARAMS_CMDID 
+    /* set tcp pkt filter for wlan HB */ 
+    WMI_HB_SET_TCP_PKT_FILTER_CMDID 
+    /* set udp parameters for wlan HB */ 
+    WMI_HB_SET_UDP_PARAMS_CMDID 
+    /* set udp pkt filter for wlan HB */ 
+    WMI_HB_SET_UDP_PKT_FILTER_CMDID 
+ 
+    /* OIC ping keep alive */ 
+    WMI_HB_OIC_PING_OFFLOAD_PARAM_CMDID 
+    WMI_HB_OIC_PING_OFFLOAD_SET_ENABLE_CMDID 
+ 
+    /* WMI commands related to DHCP Lease Renew Offload **/ 
+    WMI_HB_DHCP_LEASE_RENEW_OFFLOAD_CMDID 
+ 
+    /** Wlan RMC commands*/ 
+    /** enable/disable RMC */ 
+    WMI_RMC_SET_MODE_CMDID = WMI_CMD_GRP_START_ID(WMI_GRP_RMC) 
+    /** configure action frame period */ 
+    WMI_RMC_SET_ACTION_PERIOD_CMDID 
+    /** For debug/future enhancement purposes only 
+     *  configures/finetunes RMC algorithms */ 
+    WMI_RMC_CONFIG_CMDID 
+    /** select manual leader */ 
+    WMI_RMC_SET_MANUAL_LEADER_CMDID 
+ 
+    /** WLAN MHF offload commands */ 
+    /** enable/disable MHF offload */ 
+    WMI_MHF_OFFLOAD_SET_MODE_CMDID = WMI_CMD_GRP_START_ID(WMI_GRP_MHF_OFL) 
+    /** Plumb routing table for MHF offload */ 
+    WMI_MHF_OFFLOAD_PLUMB_ROUTING_TBL_CMDID 
+ 
+    /*location scan commands*/ 
+    /*start batch scan*/ 
+    WMI_BATCH_SCAN_ENABLE_CMDID = WMI_CMD_GRP_START_ID(WMI_GRP_LOCATION_SCAN) 
+    /*stop batch scan*/ 
+    WMI_BATCH_SCAN_DISABLE_CMDID 
+    /*get batch scan result*/ 
+    WMI_BATCH_SCAN_TRIGGER_RESULT_CMDID 
+ 
+ 
+    /* OEM related cmd */ 
+    WMI_OEM_REQ_CMDID = WMI_CMD_GRP_START_ID(WMI_GRP_OEM) 
+    WMI_OEM_REQUEST_CMDID 
+    /* OEM related cmd used for Low Power ranging */ 
+    WMI_LPI_OEM_REQ_CMDID 
+    WMI_OEM_DMA_RING_CFG_REQ_CMDID 
+    /** Command to handle OEM's opaque data */ 
+    WMI_OEM_DATA_CMDID 
+ 
+ 
+    /** Nan Request */ 
+    WMI_NAN_CMDID = WMI_CMD_GRP_START_ID(WMI_GRP_NAN) 
+ 
+    /** Modem power state command */ 
+    WMI_MODEM_POWER_STATE_CMDID = WMI_CMD_GRP_START_ID(WMI_GRP_COEX) 
+    WMI_CHAN_AVOID_UPDATE_CMDID 
+    WMI_COEX_CONFIG_CMDID 
+    WMI_CHAN_AVOID_RPT_ALLOW_CMDID 
+    WMI_COEX_GET_ANTENNA_ISOLATION_CMDID 
+    WMI_SAR_LIMITS_CMDID 
+    WMI_SAR_GET_LIMITS_CMDID 
+ 
+    /** 
+     *  OBSS scan offload enable/disable commands 
+     *  OBSS scan enable CMD will send to FW after VDEV UP 
+     *  1.  WMI_SERVICE_OBSS_SCAN is reported by FW in service ready 
+     *  2.  STA connect to a 2.4Ghz ht20/ht40 AP 
+     *  3.  AP enable 20/40 coexistence (OBSS_IE-74 can be found in beacon or association response) 
+     *  If OBSS parameters from beacon changed 
+     *  OBSS scan disable CMD will send to FW if have enabled when tearing down connection. 
+     */ 
+    WMI_OBSS_SCAN_ENABLE_CMDID = WMI_CMD_GRP_START_ID(WMI_GRP_OBSS_OFL) 
+    WMI_OBSS_SCAN_DISABLE_CMDID 
+    WMI_OBSS_COLOR_COLLISION_DET_CONFIG_CMDID 
+ 
+    /**LPI commands*/ 
+    /**LPI mgmt snooping config command*/ 
+    WMI_LPI_MGMT_SNOOPING_CONFIG_CMDID = WMI_CMD_GRP_START_ID(WMI_GRP_LPI) 
+    /**LPI scan start command*/ 
+    WMI_LPI_START_SCAN_CMDID 
+    /**LPI scan stop command*/ 
+    WMI_LPI_STOP_SCAN_CMDID 
+ 
+    /** ExtScan commands */ 
+    WMI_EXTSCAN_START_CMDID = WMI_CMD_GRP_START_ID(WMI_GRP_EXTSCAN) 
+    WMI_EXTSCAN_STOP_CMDID 
+    WMI_EXTSCAN_CONFIGURE_WLAN_CHANGE_MONITOR_CMDID 
+    WMI_EXTSCAN_CONFIGURE_HOTLIST_MONITOR_CMDID 
+    WMI_EXTSCAN_GET_CACHED_RESULTS_CMDID 
+    WMI_EXTSCAN_GET_WLAN_CHANGE_RESULTS_CMDID 
+    WMI_EXTSCAN_SET_CAPABILITIES_CMDID 
+    WMI_EXTSCAN_GET_CAPABILITIES_CMDID 
+    WMI_EXTSCAN_CONFIGURE_HOTLIST_SSID_MONITOR_CMDID 
+    WMI_EXTSCAN_CONFIGURE_MAWC_CMDID 
+ 
+    /** DHCP server offload commands */ 
+    WMI_SET_DHCP_SERVER_OFFLOAD_CMDID = WMI_CMD_GRP_START_ID(WMI_GRP_DHCP_OFL) 
+ 
+    /** IPA Offload features related commands */ 
+    WMI_IPA_OFFLOAD_ENABLE_DISABLE_CMDID = WMI_CMD_GRP_START_ID(WMI_GRP_IPA) 
+ 
+    /** mDNS responder offload commands */ 
+    WMI_MDNS_OFFLOAD_ENABLE_CMDID = WMI_CMD_GRP_START_ID(WMI_GRP_MDNS_OFL) 
+    WMI_MDNS_SET_FQDN_CMDID 
+    WMI_MDNS_SET_RESPONSE_CMDID 
+    WMI_MDNS_GET_STATS_CMDID 
+ 
+    /* enable/disable AP Authentication offload */ 
+    WMI_SAP_OFL_ENABLE_CMDID = WMI_CMD_GRP_START_ID(WMI_GRP_SAP_OFL) 
+    WMI_SAP_SET_BLACKLIST_PARAM_CMDID 
+    WMI_SAP_OBSS_DETECTION_CFG_CMDID 
+ 
+    /** Out-of-context-of-BSS (OCB) commands */ 
+    WMI_OCB_SET_CONFIG_CMDID = WMI_CMD_GRP_START_ID(WMI_GRP_OCB) 
+    WMI_OCB_SET_UTC_TIME_CMDID 
+    WMI_OCB_START_TIMING_ADVERT_CMDID 
+    WMI_OCB_STOP_TIMING_ADVERT_CMDID 
+    WMI_OCB_GET_TSF_TIMER_CMDID 
+    WMI_DCC_GET_STATS_CMDID 
+    WMI_DCC_CLEAR_STATS_CMDID 
+    WMI_DCC_UPDATE_NDL_CMDID 
+ 
+    /* System-On-Chip commands */ 
+    WMI_SOC_SET_PCL_CMDID = WMI_CMD_GRP_START_ID(WMI_GRP_SOC) 
+    WMI_SOC_SET_HW_MODE_CMDID 
+    WMI_SOC_SET_DUAL_MAC_CONFIG_CMDID 
+    WMI_SOC_SET_ANTENNA_MODE_CMDID 
+ 
+    /* packet filter commands */ 
+    WMI_PACKET_FILTER_CONFIG_CMDID = WMI_CMD_GRP_START_ID(WMI_GRP_PKT_FILTER) 
+    WMI_PACKET_FILTER_ENABLE_CMDID 
+ 
+    /** Motion Aided WiFi Connectivity (MAWC) commands */ 
+    WMI_MAWC_SENSOR_REPORT_IND_CMDID = WMI_CMD_GRP_START_ID(WMI_GRP_MAWC) 
+ 
+    /** WMI commands related to PMF 11w Offload */ 
+    WMI_PMF_OFFLOAD_SET_SA_QUERY_CMDID = WMI_CMD_GRP_START_ID(WMI_GRP_PMF_OFFLOAD) 
+ 
+    /** WMI commands related to pkt filter (BPF) offload */ 
+    WMI_BPF_GET_CAPABILITY_CMDID = WMI_CMD_GRP_START_ID(WMI_GRP_BPF_OFFLOAD) 
+    WMI_BPF_GET_VDEV_STATS_CMDID 
+    WMI_BPF_SET_VDEV_INSTRUCTIONS_CMDID 
+    WMI_BPF_DEL_VDEV_INSTRUCTIONS_CMDID 
+    WMI_BPF_SET_VDEV_ACTIVE_MODE_CMDID 
+    WMI_BPF_SET_VDEV_ENABLE_CMDID 
+    WMI_BPF_SET_VDEV_WORK_MEMORY_CMDID 
+    WMI_BPF_GET_VDEV_WORK_MEMORY_CMDID 
+ 
+    /** WMI commands related to monitor mode. */ 
+    WMI_MNT_FILTER_CMDID = WMI_CMD_GRP_START_ID(WMI_GRP_MONITOR) 
+ 
+    /** WMI commands related to regulatory offload */ 
+    WMI_SET_CURRENT_COUNTRY_CMDID = WMI_CMD_GRP_START_ID(WMI_GRP_REGULATORY) 
+    WMI_11D_SCAN_START_CMDID 
+    WMI_11D_SCAN_STOP_CMDID 
+    WMI_SET_INIT_COUNTRY_CMDID 
+ 
+    /** 
+     * Nan Data commands 
+     * NDI - NAN Data Interface 
+     * NDP - NAN Data Path 
+     */ 
+    /* Commands in prototyping phase */ 
+    WMI_NDI_GET_CAP_REQ_CMDID = WMI_CMD_GRP_START_ID(WMI_GRP_PROTOTYPE) 
+    WMI_NDP_INITIATOR_REQ_CMDID 
+    WMI_NDP_RESPONDER_REQ_CMDID 
+    WMI_NDP_END_REQ_CMDID 
+    WMI_NDP_CMDID 
+ 
+    /** WMI commands related to HW data filtering **/ 
+    WMI_HW_DATA_FILTER_CMDID = WMI_CMD_GRP_START_ID(WMI_GRP_HW_DATA_FILTER) 
+ 
+    /** WMI commands related to WLAN latency module **/ 
+    WMI_WLM_CONFIG_CMDID = WMI_CMD_GRP_START_ID(WMI_GRP_WLM) 
+ 
+    /** WMI commands related to STA & AP TWT module **/ 
+    WMI_TWT_ENABLE_CMDID = WMI_CMD_GRP_START_ID(WMI_GRP_TWT) 
+    WMI_TWT_DISABLE_CMDID 
+    WMI_TWT_ADD_DIALOG_CMDID 
+    WMI_TWT_DEL_DIALOG_CMDID 
+    WMI_TWT_PAUSE_DIALOG_CMDID 
+    WMI_TWT_RESUME_DIALOG_CMDID 
+    WMI_TWT_BTWT_INVITE_STA_CMDID 
+    WMI_TWT_BTWT_REMOVE_STA_CMDID 
+ 
+    /** WMI commands related to motion detection **/ 
+    WMI_MOTION_DET_CONFIG_PARAM_CMDID = WMI_CMD_GRP_START_ID(WMI_GRP_MOTION_DET) 
+    WMI_MOTION_DET_BASE_LINE_CONFIG_PARAM_CMDID 
+    WMI_MOTION_DET_START_STOP_CMDID 
+    WMI_MOTION_DET_BASE_LINE_START_STOP_CMDID 
+ 
+    /** WMI commands related to OBSS PD Spatial Reuse **/ 
+    WMI_PDEV_OBSS_PD_SPATIAL_REUSE_CMDID = WMI_CMD_GRP_START_ID(WMI_GRP_SPATIAL_REUSE) 
+    WMI_PDEV_OBSS_PD_SPATIAL_REUSE_SET_DEF_OBSS_THRESH_CMDID 
+ 
+    /** WMI commands related to High Precision Clock Synchronization feature **/ 
+    WMI_HPCS_PULSE_START_CMDID = WMI_CMD_GRP_START_ID(WMI_GRP_HPCS_PULSE) 
+ 
+    /** WMI commands related to Audio Frame aggregation feature **/ 
+    WMI_AUDIO_AGGR_ENABLE_CMDID = WMI_CMD_GRP_START_ID(WMI_GRP_AUDIO) 
+    WMI_AUDIO_AGGR_ADD_GROUP_CMDID 
+    WMI_AUDIO_AGGR_DEL_GROUP_CMDID 
+    WMI_AUDIO_AGGR_SET_GROUP_RATE_CMDID 
+    WMI_AUDIO_AGGR_SET_GROUP_RETRY_CMDID 
+ 
+    /** WMI commands related to Channel Frequency Response Capture **/ 
+    WMI_CFR_CAPTURE_FILTER_CMDID = WMI_CMD_GRP_START_ID(WMI_GRP_CFR_CAPTURE) 
+ 
+    /** WMI commands related to Air Time Management feature **/ 
+    /** ATF SSID GROUPING REQUEST command */ 
+    WMI_ATF_SSID_GROUPING_REQUEST_CMDID = WMI_CMD_GRP_START_ID(WMI_GRP_ATM) 
+    /** WMM ATF Configuration for groups */ 
+    WMI_ATF_GROUP_WMM_AC_CONFIG_REQUEST_CMDID 
+    /** ATF Peer Extended Request command */ 
+    WMI_PEER_ATF_EXT_REQUEST_CMDID 
+GGGGGGGGGGGGGGGGG 
+ 
+    /** WMI service is ready; after this event WMI messages can be sent/received  */ 
+    WMI_SERVICE_READY_EVENTID = 0x1 
+    /** WMI is ready; after this event the wlan subsystem is initialized and can process commands. */ 
+    WMI_READY_EVENTID 
+ 
+    /** Specify what WMI services the target supports (for services beyond 
+     * what fits in the WMI_SERVICE_READY_EVENT message's wmi_service_bitmap) 
+     */ 
+    WMI_SERVICE_AVAILABLE_EVENTID 
+ 
+    /** Specify what numbers and kinds of interfaces (a.k.a. vdevs) 
+     * the target supports 
+     */ 
+    WMI_IFACE_COMBINATION_IND_EVENTID 
+ 
+    /** Scan specific events */ 
+    WMI_SCAN_EVENTID = WMI_EVT_GRP_START_ID(WMI_GRP_SCAN) 
+ 
+    /* PDEV specific events */ 
+    /** TPC config for the current operating channel */ 
+    WMI_PDEV_TPC_CONFIG_EVENTID = WMI_EVT_GRP_START_ID(WMI_GRP_PDEV) 
+    /** Channel stats event    */ 
+    WMI_CHAN_INFO_EVENTID 
+ 
+    /** PHY Error specific WMI event */ 
+    WMI_PHYERR_EVENTID 
+ 
+    /** eeprom dump event  */ 
+    WMI_PDEV_DUMP_EVENTID 
+ 
+    /** traffic pause event */ 
+    WMI_TX_PAUSE_EVENTID 
+ 
+    /** DFS radar event  */ 
+    WMI_DFS_RADAR_EVENTID 
+ 
+    /** track L1SS entry and residency event */ 
+    WMI_PDEV_L1SS_TRACK_EVENTID 
+ 
+    /** Report current temprature of the chip in Celcius degree */ 
+    WMI_PDEV_TEMPERATURE_EVENTID 
+ 
+    /** Extension of WMI_SERVICE_READY msg with extra target capability info */ 
+    WMI_SERVICE_READY_EXT_EVENTID 
+ 
+    /** FIPS test mode event */ 
+    WMI_PDEV_FIPS_EVENTID 
+ 
+    /** Channel hopping avoidance */ 
+    WMI_PDEV_CHANNEL_HOPPING_EVENTID 
+ 
+    /** CCK ANI level event */ 
+    WMI_PDEV_ANI_CCK_LEVEL_EVENTID 
+ 
+    /** OFDM ANI level event */ 
+    WMI_PDEV_ANI_OFDM_LEVEL_EVENTID 
+ 
+    /** Tx PPDU params */ 
+    WMI_PDEV_TPC_EVENTID 
+ 
+    /** NF Cal Power in DBR/DBM for all channels */ 
+    WMI_PDEV_NFCAL_POWER_ALL_CHANNELS_EVENTID 
+ 
+    /** SOC/PDEV events */ 
+    WMI_PDEV_SET_HW_MODE_RESP_EVENTID 
+    WMI_PDEV_HW_MODE_TRANSITION_EVENTID 
+    WMI_PDEV_SET_MAC_CONFIG_RESP_EVENTID 
+    /** Report ANT DIV feature's status */ 
+    WMI_PDEV_ANTDIV_STATUS_EVENTID 
+    /** Chip level Power stats */ 
+    WMI_PDEV_CHIP_POWER_STATS_EVENTID 
+    /** Power Save Failure Detected */ 
+    WMI_PDEV_CHIP_POWER_SAVE_FAILURE_DETECTED_EVENTID 
+ 
+    /* Event to report the switch count in csa of one or more VDEVs */ 
+    WMI_PDEV_CSA_SWITCH_COUNT_STATUS_EVENTID 
+ 
+    /** Report the caldata version to host */ 
+    WMI_PDEV_CHECK_CAL_VERSION_EVENTID 
+ 
+    /** Report chain RSSI and antenna index to host */ 
+    WMI_PDEV_DIV_RSSI_ANTID_EVENTID 
+ 
+    /** provide noise floor and cycle counts for a channel */ 
+    WMI_PDEV_BSS_CHAN_INFO_EVENTID 
+ 
+    /** Response received the ctl table to host */ 
+    WMI_PDEV_UPDATE_CTLTABLE_EVENTID 
+ 
+    WMI_PDEV_DMA_RING_CFG_RSP_EVENTID 
+ 
+    WMI_PDEV_DMA_RING_BUF_RELEASE_EVENTID 
+ 
+    /** WMI Event to deliver CTL Failsafe application */ 
+    WMI_PDEV_CTL_FAILSAFE_CHECK_EVENTID 
+ 
+    /* Event to report the switch count in BSS color of one or more VDEVs */ 
+    WMI_PDEV_CSC_SWITCH_COUNT_STATUS_EVENTID 
+ 
+    /* Event to send cold boot calibration data */ 
+    WMI_PDEV_COLD_BOOT_CAL_DATA_EVENTID 
+ 
+    /* Event to report a rogue ap info that is detected in fw */ 
+    WMI_PDEV_RAP_INFO_EVENTID 
+ 
+    WMI_CHAN_RF_CHARACTERIZATION_INFO_EVENTID 
+ 
+    /** 2nd extension of SERVICE_READY msg with extra target capability info */ 
+    WMI_SERVICE_READY_EXT2_EVENTID 
+ 
+    /* VDEV specific events */ 
+    /** VDEV started event in response to VDEV_START request */ 
+    WMI_VDEV_START_RESP_EVENTID = WMI_EVT_GRP_START_ID(WMI_GRP_VDEV) 
+    /** vdev stopped event  
+    WMI_VDEV_STOPPED_EVENTID 
+    /* Indicate the set key (used for setting per 
+     * peer unicast and per vdev multicast) 
+     * operation has completed */ 
+    WMI_VDEV_INSTALL_KEY_COMPLETE_EVENTID 
+    /* NOTE: WMI_VDEV_MCC_BCN_INTERVAL_CHANGE_REQ_EVENTID would be deprecated. Please 
+     don't use this for any new implementations */ 
+    /* Firmware requests dynamic change to a specific beacon interval for a specific vdev ID in MCC scenario. 
+     This request is valid only for vdevs operating in soft AP or P2P GO mode */ 
+    WMI_VDEV_MCC_BCN_INTERVAL_CHANGE_REQ_EVENTID 
+ 
+    /* Return the TSF timestamp of specified vdev */ 
+    WMI_VDEV_TSF_REPORT_EVENTID 
+ 
+    /* FW response to Host for vdev delete cmdid */ 
+    WMI_VDEV_DELETE_RESP_EVENTID 
+ 
+    /* DISA feature: FW response to Host with encrypted/decrypted 802.11 DISA frame */ 
+    WMI_VDEV_ENCRYPT_DECRYPT_DATA_RESP_EVENTID 
+ 
+    /** event to report mac randomization success **/ 
+    WMI_VDEV_ADD_MAC_ADDR_TO_RX_FILTER_STATUS_EVENTID 
+ 
+    /* event for ARP stats collection */ 
+    WMI_VDEV_GET_ARP_STAT_EVENTID 
+ 
+    /** get tx power event in response to VDEV_GET_TX_POWER request */ 
+    WMI_VDEV_GET_TX_POWER_EVENTID 
+ 
+    WMI_VDEV_BCN_RECEPTION_STATS_EVENTID 
+ 
+    /* provide LTE-Coex state */ 
+    WMI_VDEV_GET_MWS_COEX_STATE_EVENTID 
+ 
+    /* provide LTE-Coex Dynamic Power Back-off info */ 
+    WMI_VDEV_GET_MWS_COEX_DPWB_STATE_EVENTID 
+ 
+    /* provide LTE-Coex TDM info */ 
+    WMI_VDEV_GET_MWS_COEX_TDM_STATE_EVENTID 
+ 
+    /* provide LTE-Coex IDRx info */ 
+    WMI_VDEV_GET_MWS_COEX_IDRX_STATE_EVENTID 
+ 
+    /* provide LTE-Coex antenna sharing info */ 
+    WMI_VDEV_GET_MWS_COEX_ANTENNA_SHARING_STATE_EVENTID 
+ 
+    /* Event to handle FW offloaded mgmt packets */ 
+    WMI_VDEV_MGMT_OFFLOAD_EVENTID 
+ 
+    /* FW response to Host for delete all peer cmdid */ 
+    WMI_VDEV_DELETE_ALL_PEER_RESP_EVENTID 
+ 
+ 
+    /* peer specific events */ 
+    /** FW reauet to kick out the station for reasons like inactivity 
+    WMI_PEER_STA_KICKOUT_EVENTID = WMI_EVT_GRP_START_ID(WMI_GRP_PEER) 
+ 
+    /** Peer Info Event with data_rate   tx_fail_cnt etc */
+    WMI_PEER_INFO_EVENTID 
+ 
+    /** Event indicating that TX fail count reaching threshold */ 
+    WMI_PEER_TX_FAIL_CNT_THR_EVENTID 
+ 
+    /* Return the estimate link speed for the Peer specified in the 
+     * WMI_PEER_GET_ESTIMATED_LINKSPEED_CMDID command. 
+     */ 
+    WMI_PEER_ESTIMATED_LINKSPEED_EVENTID 
+    /* Return the peer state 
+     * WMI_PEER_SET_PARAM_CMDID 
+     */ 
+    WMI_PEER_STATE_EVENTID 
+ 
+    /* Peer Assoc Conf event to confirm fw had received PEER_ASSOC_CMD. 
+     * After that 
+     * Otherwise 
+     */ 
+    WMI_PEER_ASSOC_CONF_EVENTID 
+ 
+    /* FW response to Host for peer delete cmdid */ 
+    WMI_PEER_DELETE_RESP_EVENTID 
+ 
+    /** Valid rate code list for peer  */ 
+    WMI_PEER_RATECODE_LIST_EVENTID 
+    WMI_WDS_PEER_EVENTID 
+    WMI_PEER_STA_PS_STATECHG_EVENTID 
+    /** Peer Ant Div Info Event with rssi per chain 
+    WMI_PEER_ANTDIV_INFO_EVENTID 
+ 
+    /* 
+     * WMI_PEER_RESERVED_EVENTID 
+     * These values are used for placeholders 
+     * WMI_PEER_OPER_MODE_CHANGE_EVENTID constant to have the same value 
+     * as it had in its original location 
+     * amongst the WMI_PEER CMDID defs. 
+     * 
+     * These WMI_PEER_RESERVED values can be replaced with actual WMI peer 
+     * event message IDs 
+     * WMI_PEER EVENTID defs at the end of the WMI_GRP_PEER WMI_EVT_GRP. 
+     */ 
+    WMI_PEER_RESERVED0_EVENTID 
+    WMI_PEER_RESERVED1_EVENTID 
+    WMI_PEER_RESERVED2_EVENTID 
+    WMI_PEER_RESERVED3_EVENTID 
+    WMI_PEER_RESERVED4_EVENTID 
+    WMI_PEER_RESERVED5_EVENTID 
+    WMI_PEER_RESERVED6_EVENTID 
+    WMI_PEER_RESERVED7_EVENTID 
+    WMI_PEER_RESERVED8_EVENTID 
+    WMI_PEER_RESERVED9_EVENTID 
+    WMI_PEER_RESERVED10_EVENTID 
+    /** Peer operating mode change indication sent to host to update stats */ 
+    WMI_PEER_OPER_MODE_CHANGE_EVENTID 
+ 
+    /** report the current tx PN for the peer */ 
+    WMI_PEER_TX_PN_RESPONSE_EVENTID 
+ 
+    WMI_PEER_CFR_CAPTURE_EVENTID 
+ 
+    /* beacon/mgmt specific events */ 
+    /** RX management frame. the entire frame is carried along with the event.  */ 
+    WMI_MGMT_RX_EVENTID = WMI_EVT_GRP_START_ID(WMI_GRP_MGMT) 
+    /** software beacon alert event to Host requesting host to Queue a beacon for transmission 
+     use only in host beacon mode */ 
+    WMI_HOST_SWBA_EVENTID 
+    /** beacon tbtt offset event indicating the tsf offset of the tbtt from the theoretical value. tbtt offset is normally 0 and will be non zero if there are multiple VDEVs operating in 
+     staggered beacon transmission mode */ 
+    WMI_TBTTOFFSET_UPDATE_EVENTID 
+ 
+    /** event after the first beacon is transmitted following 
+             a change in the template.*/ 
+    WMI_OFFLOAD_BCN_TX_STATUS_EVENTID 
+    /** event after the first probe response is transmitted following 
+             a change in the template.*/ 
+    WMI_OFFLOAD_PROB_RESP_TX_STATUS_EVENTID 
+    /** Event for Mgmt TX completion event */ 
+    WMI_MGMT_TX_COMPLETION_EVENTID 
+    /** Event for Mgmt TX bundle completion event */ 
+    WMI_MGMT_TX_BUNDLE_COMPLETION_EVENTID 
+    /** vdev_map used in WMI_TBTTOFFSET_UPDATE_EVENTID supports max 32 vdevs. 
+     *   Use this event if number of vdevs > 32. 
+     */ 
+    WMI_TBTTOFFSET_EXT_UPDATE_EVENTID 
+    /** Event for offchan data TX completion event */ 
+    WMI_OFFCHAN_DATA_TX_COMPLETION_EVENTID 
+ 
+    /** software FILS Discovery Frame alert event to Host 
+    WMI_HOST_SWFDA_EVENTID 
+ 
+    /** software beacon alert event to Host requesting host to Queue a beacon for transmission. 
+     *   Used only in host beacon mode. */ 
+    WMI_HOST_SWBA_V2_EVENTID 
+ 
+    /* ADDBA Related WMI Events*/ 
+    /** Indication the completion of the prior 
+     WMI_PEER_TID_DELBA_CMDID(initiator) */ 
+    WMI_TX_DELBA_COMPLETE_EVENTID = WMI_EVT_GRP_START_ID(WMI_GRP_BA_NEG) 
+    /** Indication the completion of the prior 
+     *WMI_PEER_TID_ADDBA_CMDID(initiator) */ 
+    WMI_TX_ADDBA_COMPLETE_EVENTID 
+ 
+    /* Seq num returned from hw for a sta/tid pair */ 
+    WMI_BA_RSP_SSN_EVENTID 
+ 
+    /* Aggregation state requested by BTC */ 
+    WMI_AGGR_STATE_TRIG_EVENTID 
+ 
+    /** Roam event to trigger roaming on host */ 
+    WMI_ROAM_EVENTID = WMI_EVT_GRP_START_ID(WMI_GRP_ROAM) 
+ 
+    /** matching AP found from list of profiles */ 
+    WMI_PROFILE_MATCH 
+    /** roam synch event */ 
+    WMI_ROAM_SYNCH_EVENTID 
+    /** roam synch frame event */ 
+    WMI_ROAM_SYNCH_FRAME_EVENTID 
+    /** various roam scan stats */ 
+    WMI_ROAM_SCAN_STATS_EVENTID 
+    /** Blacklisted AP information event */ 
+    WMI_ROAM_BLACKLIST_EVENTID 
+    /** Roam Pre-Authentication start event */ 
+    WMI_ROAM_PREAUTH_START_EVENTID 
+    /** Roaming PMKID request event */ 
+    WMI_ROAM_PMKID_REQUEST_EVENTID 
+ 
+    /** P2P disc found */ 
+    WMI_P2P_DISC_EVENTID = WMI_EVT_GRP_START_ID(WMI_GRP_P2P) 
+    /** send noa info to host when noa is changed for beacon tx offload enable */ 
+    WMI_P2P_NOA_EVENTID 
+    /** send p2p listen offload stopped event with different reason */ 
+    WMI_P2P_LISTEN_OFFLOAD_STOPPED_EVENTID 
+ 
+    /** Send EGAP Info to host */ 
+    WMI_AP_PS_EGAP_INFO_EVENTID = WMI_EVT_GRP_START_ID(WMI_GRP_AP_PS) 
+ 
+    /* send pdev resume event to host after pdev resume. */ 
+    WMI_PDEV_RESUME_EVENTID = WMI_EVT_GRP_START_ID(WMI_GRP_SUSPEND) 
+ 
+    /** WOW wake up host event.generated in response to WMI_WOW_HOSTWAKEUP_FROM_SLEEP_CMDID. 
+     will cary wake reason */ 
+    WMI_WOW_WAKEUP_HOST_EVENTID = WMI_EVT_GRP_START_ID(WMI_GRP_WOW) 
+    WMI_D0_WOW_DISABLE_ACK_EVENTID 
+    WMI_WOW_INITIAL_WAKEUP_EVENTID 
+ 
+    /*RTT related event ID*/ 
+    /** RTT measurement report */ 
+    WMI_RTT_MEASUREMENT_REPORT_EVENTID = WMI_EVT_GRP_START_ID(WMI_GRP_RTT) 
+    /** TSF measurement report */ 
+    WMI_TSF_MEASUREMENT_REPORT_EVENTID 
+    /** RTT error report */ 
+    WMI_RTT_ERROR_REPORT_EVENTID 
+ 
+    /*STATS specific events*/ 
+    /** txrx stats event requested by host */ 
+    WMI_STATS_EXT_EVENTID = WMI_EVT_GRP_START_ID(WMI_GRP_STATS) 
+    /** FW iface link stats Event  */ 
+    WMI_IFACE_LINK_STATS_EVENTID 
+    /** FW iface peer link stats Event  */ 
+    WMI_PEER_LINK_STATS_EVENTID 
+    /** FW Update radio stats Event  */ 
+    WMI_RADIO_LINK_STATS_EVENTID 
+ 
+    /**  Firmware memory dump Complete event*/ 
+    WMI_UPDATE_FW_MEM_DUMP_EVENTID 
+ 
+    /** Event indicating the DIAG logs/events supported by FW */ 
+    WMI_DIAG_EVENT_LOG_SUPPORTED_EVENTID 
+ 
+    /** Instantaneous RSSI event */ 
+    WMI_INST_RSSI_STATS_EVENTID 
+ 
+    /** FW update tx power levels event */ 
+    WMI_RADIO_TX_POWER_LEVEL_STATS_EVENTID 
+ 
+    /** This event is used to report wlan stats to host. 
+     * It is triggered under 3 conditions: 
+     * (a) Periodic timer timed out 
+     *     by WMI_PDEV_PARAM_STATS_OBSERVATION_PERIOD 
+     * (b) Whenever any of the (enabled) stats thresholds specified 
+     *     in the WMI_PDEV_SET_STATS_THRESHOLD_CMD message is exceeded 
+     *     within the current stats period. 
+     * (c) In response to the one-time wlan stats request of 
+     *     WMI_REQUEST_WLAN_STATS_CMDID from host. 
+     * 
+     *  If this event is triggered by condition a or b 
+     *  the stats counters are cleared at the start of each period. 
+     *  But if it is triggered by condition c 
+     */ 
+    WMI_REPORT_STATS_EVENTID 
+ 
+    /** Event indicating RCPI of the peer requested by host in the WMI_REQUEST_RCPI_CMDID */ 
+    WMI_UPDATE_RCPI_EVENTID 
+ 
+    /** This event is used to respond to WMI_REQUEST_PEER_STATS_INFO_CMDID 
+     *  and report peer stats info to host */ 
+    WMI_PEER_STATS_INFO_EVENTID 
+ 
+    /** This event is used to respond to WMI_REQUEST_RADIO_CHAN_STATS_CMDID 
+     *  and report radio channel stats to host */ 
+    WMI_RADIO_CHAN_STATS_EVENTID 
+ 
+    /** This event is used to respond to WMI_REQUEST_WLM_STATS_CMDID 
+     *  and report WLM (WLAN latency manager) stats info to host */ 
+    WMI_WLM_STATS_EVENTID 
+ 
+ 
+    /* NLO specific events */ 
+    /** NLO match event after the first match */ 
+    WMI_NLO_MATCH_EVENTID = WMI_EVT_GRP_START_ID(WMI_GRP_NLO_OFL) 
+ 
+    /** NLO scan complete event */ 
+    WMI_NLO_SCAN_COMPLETE_EVENTID 
+ 
+    /** APFIND specific events */ 
+    WMI_APFIND_EVENTID 
+ 
+    /** passpoint network match event */ 
+    WMI_PASSPOINT_MATCH_EVENTID 
+ 
+    /** GTK offload stautus event requested by host */ 
+    WMI_GTK_OFFLOAD_STATUS_EVENTID = WMI_EVT_GRP_START_ID(WMI_GRP_GTK_OFL) 
+ 
+    /** GTK offload failed to rekey event */ 
+    WMI_GTK_REKEY_FAIL_EVENTID 
+    /* CSA IE received event */ 
+    WMI_CSA_HANDLING_EVENTID = WMI_EVT_GRP_START_ID(WMI_GRP_CSA_OFL) 
+ 
+    /*chatter query reply event*/ 
+    WMI_CHATTER_PC_QUERY_EVENTID = WMI_EVT_GRP_START_ID(WMI_GRP_CHATTER) 
+ 
+    /** DFS related events */ 
+    WMI_PDEV_DFS_RADAR_DETECTION_EVENTID = WMI_EVT_GRP_START_ID(WMI_GRP_DFS) 
+    /** Indicate channel-availability-check completion event to host */ 
+    WMI_VDEV_DFS_CAC_COMPLETE_EVENTID 
+    /** Indicate off-channel-availability-check completion event to host */ 
+    WMI_VDEV_ADFS_OCAC_COMPLETE_EVENTID 
+ 
+    /** echo event in response to echo command */ 
+    WMI_ECHO_EVENTID = WMI_EVT_GRP_START_ID(WMI_GRP_MISC) 
+ 
+    /* !!IMPORTANT!! 
+     * If you need to add a new WMI event ID to the WMI_GRP_MISC sub-group 
+     * please make sure you add it BEHIND WMI_PDEV_UTF_EVENTID 
+     * as we MUST have a fixed value here to maintain compatibility between 
+     * UTF and the ART2 driver 
+     */ 
+    /** UTF specific WMI event */ 
+    WMI_PDEV_UTF_EVENTID 
+ 
+    /** event carries buffered debug messages  */ 
+    WMI_DEBUG_MESG_EVENTID 
+    /** FW stats(periodic or on shot)  */ 
+    WMI_UPDATE_STATS_EVENTID 
+    /** debug print message used for tracing FW code while debugging  */ 
+    WMI_DEBUG_PRINT_EVENTID 
+    /** DCS wlan or non-wlan interference event 
+     */ 
+    WMI_DCS_INTERFERENCE_EVENTID 
+    /** VI spoecific event  */ 
+    WMI_PDEV_QVIT_EVENTID 
+    /** FW code profile data in response to profile request  */ 
+    WMI_WLAN_PROFILE_DATA_EVENTID 
+    /* Factory Testing Mode request event 
+     * used for integrated chipsets */ 
+    WMI_PDEV_FTM_INTG_EVENTID 
+    /* avoid list of frequencies . 
+     */ 
+    WMI_WLAN_FREQ_AVOID_EVENTID 
+    /* Indicate the keepalive parameters */ 
+    WMI_VDEV_GET_KEEPALIVE_EVENTID 
+    /*Thermal Management event*/ 
+    WMI_THERMAL_MGMT_EVENTID 
+ 
+    /* Container for DIAG event and log data */ 
+    WMI_DIAG_DATA_CONTAINER_EVENTID 
+ 
+    /* host auto shutdown event */ 
+    WMI_HOST_AUTO_SHUTDOWN_EVENTID 
+ 
+    /*update mib counters together with WMI_UPDATE_STATS_EVENTID*/ 
+    WMI_UPDATE_WHAL_MIB_STATS_EVENTID 
+ 
+    /*update ht/vht info based on vdev (rx and tx NSS and preamble)*/ 
+    WMI_UPDATE_VDEV_RATE_STATS_EVENTID 
+ 
+    WMI_DIAG_EVENTID 
+ 
+    /** Set OCB Sched Response 
+    WMI_OCB_SET_SCHED_EVENTID 
+ 
+    /** event to indicate the flush of the buffered debug messages is complete*/ 
+    WMI_DEBUG_MESG_FLUSH_COMPLETE_EVENTID 
+ 
+    /** event to report mix/max RSSI breach events */ 
+    WMI_RSSI_BREACH_EVENTID 
+ 
+    /** event to report completion of data storage into flash memory */ 
+    WMI_TRANSFER_DATA_TO_FLASH_COMPLETE_EVENTID 
+ 
+    /** event to report SCPC calibrated data to host */ 
+    WMI_PDEV_UTF_SCPC_EVENTID 
+ 
+    /** event to provide requested data from the target's flash memory */ 
+    WMI_READ_DATA_FROM_FLASH_EVENTID 
+ 
+    /** event to report rx aggregation failure frame information */ 
+    WMI_REPORT_RX_AGGR_FAILURE_EVENTID 
+ 
+    /** event to upload a PKGID to host to identify chip for various products */ 
+    WMI_PKGID_EVENTID 
+ 
+    /* Thermal Throttling stats event id for every pdev and zones 
+    WMI_THERM_THROT_STATS_EVENTID 
+ 
+    /* WMI UNIT TEST event */ 
+    WMI_UNIT_TEST_EVENTID 
+ 
+    /** event to report result of host configure SAR2 */ 
+    WMI_SAR2_RESULT_EVENTID 
+ 
+    /** event to get TX power per input HALPHY parameters */ 
+    WMI_GET_TPC_POWER_EVENTID 
+ 
+    /** event to provide MU-EDCA Parameters (to update host's beacon config) */ 
+    WMI_MUEDCA_PARAMS_CONFIG_EVENTID 
+ 
+    /** event to get ELNA BYPASS status */ 
+    WMI_GET_ELNA_BYPASS_EVENTID 
+ 
+    /** event to report ANI level of the channels */ 
+    WMI_GET_CHANNEL_ANI_EVENTID 
+ 
+    /* GPIO Event */ 
+    WMI_GPIO_INPUT_EVENTID = WMI_EVT_GRP_START_ID(WMI_GRP_GPIO) 
+    /** upload H_CV info WMI event 
+     * to indicate uploaded H_CV info to host 
+     */ 
+    WMI_UPLOADH_EVENTID 
+ 
+    /** capture H info WMI event 
+     * to indicate captured H info to host 
+     */ 
+    WMI_CAPTUREH_EVENTID 
+    /* hw RFkill */ 
+    WMI_RFKILL_STATE_CHANGE_EVENTID 
+ 
+    /* TDLS Event */ 
+    WMI_TDLS_PEER_EVENTID = WMI_EVT_GRP_START_ID(WMI_GRP_TDLS) 
+ 
+    /** STA SMPS Event */ 
+    /** force SMPS mode */ 
+    WMI_STA_SMPS_FORCE_MODE_COMPLETE_EVENTID = WMI_EVT_GRP_START_ID(WMI_GRP_STA_SMPS) 
+ 
+    /*location scan event*/ 
+    /*report the firmware's capability of batch scan*/ 
+    WMI_BATCH_SCAN_ENABLED_EVENTID = WMI_EVT_GRP_START_ID(WMI_GRP_LOCATION_SCAN) 
+    /*batch scan result*/ 
+    WMI_BATCH_SCAN_RESULT_EVENTID 
+    /* OEM Event */ 
+    WMI_OEM_CAPABILITY_EVENTID = WMI_EVT_GRP_START_ID(WMI_GRP_OEM) 
+    WMI_OEM_MEASUREMENT_REPORT_EVENTID 
+    WMI_OEM_ERROR_REPORT_EVENTID 
+    WMI_OEM_RESPONSE_EVENTID 
+    WMI_OEM_DMA_RING_CFG_RSP_EVENTID 
+    WMI_OEM_DMA_BUF_RELEASE_EVENTID 
+    WMI_OEM_DATA_EVENTID 
+ 
+    /* NAN Event */ 
+    WMI_NAN_EVENTID = WMI_EVT_GRP_START_ID(WMI_GRP_NAN) 
+    WMI_NAN_DISC_IFACE_CREATED_EVENTID 
+    WMI_NAN_DISC_IFACE_DELETED_EVENTID 
+    WMI_NAN_STARTED_CLUSTER_EVENTID 
+    WMI_NAN_JOINED_CLUSTER_EVENTID 
+ 
+    /* Coex Event */ 
+    WMI_COEX_REPORT_ANTENNA_ISOLATION_EVENTID = WMI_EVT_GRP_START_ID(WMI_GRP_COEX) 
+    WMI_SAR_GET_LIMITS_EVENTID 
+ 
+    /* LPI Event */ 
+    WMI_LPI_RESULT_EVENTID = WMI_EVT_GRP_START_ID(WMI_GRP_LPI) 
+    WMI_LPI_STATUS_EVENTID 
+    WMI_LPI_HANDOFF_EVENTID 
+ 
+    /* ExtScan events */ 
+    WMI_EXTSCAN_START_STOP_EVENTID = WMI_EVT_GRP_START_ID(WMI_GRP_EXTSCAN) 
+    WMI_EXTSCAN_OPERATION_EVENTID 
+    WMI_EXTSCAN_TABLE_USAGE_EVENTID 
+    WMI_EXTSCAN_CACHED_RESULTS_EVENTID 
+    WMI_EXTSCAN_WLAN_CHANGE_RESULTS_EVENTID 
+    WMI_EXTSCAN_HOTLIST_MATCH_EVENTID 
+    WMI_EXTSCAN_CAPABILITIES_EVENTID 
+    WMI_EXTSCAN_HOTLIST_SSID_MATCH_EVENTID 
+ 
+    /* mDNS offload events */ 
+    WMI_MDNS_STATS_EVENTID = WMI_EVT_GRP_START_ID(WMI_GRP_MDNS_OFL) 
+ 
+    /* SAP Authentication offload events */ 
+    WMI_SAP_OFL_ADD_STA_EVENTID = WMI_EVT_GRP_START_ID(WMI_GRP_SAP_OFL) 
+    WMI_SAP_OFL_DEL_STA_EVENTID 
+    WMI_SAP_OBSS_DETECTION_REPORT_EVENTID 
+ 
+    /* OBSS Offloads events */ 
+    WMI_OBSS_COLOR_COLLISION_DETECTION_EVENTID = WMI_EVT_GRP_START_ID(WMI_GRP_OBSS_OFL) 
+ 
+    /** Out-of-context-of-bss (OCB) events */ 
+    WMI_OCB_SET_CONFIG_RESP_EVENTID = WMI_EVT_GRP_START_ID(WMI_GRP_OCB) 
+    WMI_OCB_GET_TSF_TIMER_RESP_EVENTID 
+    WMI_DCC_GET_STATS_RESP_EVENTID 
+    WMI_DCC_UPDATE_NDL_RESP_EVENTID 
+    WMI_DCC_STATS_EVENTID 
+ 
+    /* System-On-Chip events */ 
+    WMI_SOC_SET_HW_MODE_RESP_EVENTID = WMI_EVT_GRP_START_ID(WMI_GRP_SOC) 
+    WMI_SOC_HW_MODE_TRANSITION_EVENTID 
+    WMI_SOC_SET_DUAL_MAC_CONFIG_RESP_EVENTID 
+ 
+    /** Motion Aided WiFi Connectivity (MAWC) events */ 
+    WMI_MAWC_ENABLE_SENSOR_EVENTID = WMI_EVT_GRP_START_ID(WMI_GRP_MAWC) 
+ 
+    /** pkt filter (BPF) offload relevant events */ 
+    WMI_BPF_CAPABILIY_INFO_EVENTID = WMI_EVT_GRP_START_ID(WMI_GRP_BPF_OFFLOAD) 
+    WMI_BPF_VDEV_STATS_INFO_EVENTID 
+    WMI_BPF_GET_VDEV_WORK_MEMORY_RESP_EVENTID 
+ 
+    /* RMC specific event */ 
+    /* RMC manual leader selected event */ 
+    WMI_RMC_NEW_LEADER_EVENTID = WMI_EVT_GRP_START_ID(WMI_GRP_RMC) 
+ 
+    /** WMI events related to regulatory offload */ 
+    WMI_REG_CHAN_LIST_CC_EVENTID = WMI_EVT_GRP_START_ID(WMI_GRP_REGULATORY) 
+    WMI_11D_NEW_COUNTRY_EVENTID 
+ 
+    /** Events for TWT(Target Wake Time) of STA and AP  */ 
+    WMI_TWT_ENABLE_COMPLETE_EVENTID = WMI_EVT_GRP_START_ID(WMI_GRP_TWT) 
+    WMI_TWT_DISABLE_COMPLETE_EVENTID 
+    WMI_TWT_ADD_DIALOG_COMPLETE_EVENTID 
+    WMI_TWT_DEL_DIALOG_COMPLETE_EVENTID 
+    WMI_TWT_PAUSE_DIALOG_COMPLETE_EVENTID 
+    WMI_TWT_RESUME_DIALOG_COMPLETE_EVENTID 
+    WMI_TWT_BTWT_INVITE_STA_COMPLETE_EVENTID 
+    WMI_TWT_BTWT_REMOVE_STA_COMPLETE_EVENTID 
+ 
+    /** Events in Prototyping phase */ 
+    WMI_NDI_CAP_RSP_EVENTID = WMI_EVT_GRP_START_ID(WMI_GRP_PROTOTYPE) 
+    WMI_NDP_INITIATOR_RSP_EVENTID 
+    WMI_NDP_RESPONDER_RSP_EVENTID 
+    WMI_NDP_END_RSP_EVENTID 
+    WMI_NDP_INDICATION_EVENTID 
+    WMI_NDP_CONFIRM_EVENTID 
+    WMI_NDP_END_INDICATION_EVENTID 
+    WMI_WLAN_COEX_BT_ACTIVITY_EVENTID 
+    WMI_NDL_SCHEDULE_UPDATE_EVENTID 
+    WMI_NDP_EVENTID 
+ 
+    /** WMI events related to motion detection */ 
+    WMI_MOTION_DET_HOST_EVENTID = WMI_EVT_GRP_START_ID(WMI_GRP_MOTION_DET) 
+    WMI_MOTION_DET_BASE_LINE_HOST_EVENTID 
+ 
+    /** WMI events related to Estimation of Service Parameters (802.11mc) */ 
+    WMI_ESP_ESTIMATE_EVENTID = WMI_EVT_GRP_START_ID(WMI_GRP_ESP) 
+EEEEEEEEEEEEEEEEEEEEEE 
